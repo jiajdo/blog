@@ -1,17 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const List = (props) => {
+const List = ({posts, setClicked, setOpenedPost}) => {
+  const clickHandler = (id) => {
+    console.log('click handler triggered')
+    setClicked(true);
+    setOpenedPost(id);
+  };
   return (
-    <ul id="List">{props.posts.map((post, index) => {
+    <ul id="List">
+      {posts.map((post, index) => {
         return (
-       <li key={post.id}>{post.title}</li> 
-        )
-    }
-        
-        
-        
-        )}</ul>
-  )
-}
+          <li key={post.id} onClick={() => clickHandler(post.id)}>
+            {post.title}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
 
-export default List
+export default List;
