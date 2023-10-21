@@ -14,13 +14,11 @@ const reducer = (state, action) => {
     case "editContent":
       return { ...state, content: action.value };
     case "editImg":
-      return { ...state, img: action.value};
+      return { ...state, img: action.value };
     default:
       return state;
   }
 };
-
-
 
 const AddPostForm = () => {
   const [state, dispatch] = useReducer(reducer, initialAddForm);
@@ -29,17 +27,16 @@ const AddPostForm = () => {
     e.preventDefault();
     try {
       const body = state;
-      const response = await fetch("http://localhost:3030/posts", {
+      await fetch("http://localhost:3030/posts", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(body)
-      }
-      );
-    }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      })
+    } 
     catch (e){
       console.log(e);
-    }
-  }
+    };
+  };
 
   return (
     <form onSubmit={submitHandler}>
