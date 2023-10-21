@@ -3,16 +3,16 @@ My book blog includes reviews of all my favorite books. I can add a review quick
 Click on each title to see the review in detail.
 
 # Technologies
-Postgres
-Express
-React
+Postgres\
+Express\
+React\
 Node
 
 # NPM libraries
-body-parser
-cors
-dotenv
-express
-nodemon
+body-parser\
+cors\
+dotenv\
+express\
+nodemon\
 pg
 
