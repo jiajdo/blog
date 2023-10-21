@@ -22,6 +22,10 @@ body{
     background-color: blanchedalmond;
 }
 
-button {
-
+button{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: brown;
+    color:aliceblue;
+    padding: 1em;
 }
