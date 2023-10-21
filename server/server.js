@@ -28,6 +28,8 @@ app.get("/posts", async (req, res) => {
 
 //app.post route for making posts
 
+
+
 app.listen(PORT, async () => {
     console.log(`Refrigerator running on ${PORT}`)
 })

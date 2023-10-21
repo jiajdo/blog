@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import List from "./components/List";
 import SinglePost from "./components/SinglePost";
+import AddPostForm from "./components/AddPostForm";
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [openedPost, setOpenedPost] = useState(null);
+  const [addingPost, setAddingPost] = useState(false)
+
   const fetchPosts = async () => {
     try {
       let res = await fetch("http://localhost:3030/posts");
@@ -31,7 +34,8 @@ function App() {
   return (
     <div id="App">
       <List {...{posts, setClicked, setOpenedPost}}/>
-      {clicked ? <SinglePost post={filterPost()} /> : <></>}       
+      {clicked ? <SinglePost post={filterPost()} /> : <></>} 
+      {addingPost ? <AddPostForm /> : <button onClick={() => setAddingPost(true)}>Add Post</button>}      
       
     </div>
   );
