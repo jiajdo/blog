@@ -4,8 +4,10 @@ padding: 1em;
 font-weight: bold;
 border-style: groove;
 border-radius: 1em;
-width: fit-content;
-background-color:darkkhaki
-
+/* width: fit-content; */
+text-align: center;
+background-color:darkkhaki;
+margin-left: auto;
+margin-right:auto
 ;
 }
