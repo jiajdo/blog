@@ -33,13 +33,36 @@ button{
 }
 
 form{
+    border-style: double;
+    border-color:cadetblue;
+    border-radius: 10em;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    display: block;
     padding: 0.5em;
     text-align: center;
 }
+
+label{
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    height: 3em;
+    width: 20em;
+    border-radius: 0.5em;
+}
+
+.reviewInput{
+   height: 20em;
+   width: 40em;
+}
+
 
 label{
     padding-bottom: 1em;

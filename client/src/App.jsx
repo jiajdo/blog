@@ -36,7 +36,7 @@ function App() {
         <h1 className="pageTitle">What books is Jia reading?</h1>
       <List {...{posts, setClicked, setOpenedPost}}/>
       {clicked ? <SinglePost post={filterPost()} /> : <></>} 
-      {addingPost ? <AddPostForm /> : <button onClick={() => setAddingPost(true)}>Add Post</button>}      
+      {addingPost ? <AddPostForm /> : <button onClick={() => setAddingPost(true)}>Add Book Review</button>}      
       
     </div>
   );

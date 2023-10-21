@@ -40,7 +40,7 @@ const AddPostForm = () => {
 
   return (
     <form onSubmit={submitHandler}>
-      <label>Add Title</label>
+      <label>Title</label>
       <input
         type="text"
         id="add-book-title"
@@ -64,6 +64,7 @@ const AddPostForm = () => {
       />
       <label>Review</label>
       <input
+        className="reviewInput"
         type="text"
         id="add-content"
         placeholder="Review"
@@ -74,7 +75,7 @@ const AddPostForm = () => {
         }}
       />
       <button type="submit" className="addButton">
-        Add Post
+        Add Book Review
       </button>
     </form>
   );
