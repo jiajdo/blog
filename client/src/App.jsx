@@ -18,29 +18,23 @@ function App() {
     }
   };
 
+  const filterPost = () => {
+    return posts.filter((post) =>{
+        return post.id === openedPost
+    })[0];
+  }
+
   useEffect(() => {
     fetchPosts();
   }, []);
 
   return (
     <div id="App">
-      <List {...{posts, setClicked, setOpenedPost}}
-      />
+      <List {...{posts, setClicked, setOpenedPost}}/>
+      {clicked ? <SinglePost post={filterPost()} /> : <></>}       
+      
     </div>
   );
 }
-
-//callback function from the frontend to get book
-//stored in json object
-//use .filter to get book by id
-
-//have conditions for rendering different components
-//have the state be an id. if null, none of them were clicked
-
-//list component - displays all post titles
-
-//view component - display individual post
-
-//form component - add a blog, opens when clicking a button
 
 export default App;
