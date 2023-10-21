@@ -21,7 +21,7 @@ app.get("/posts", async (req, res) => {
   try {
     const { rows: posts } = await db.query("SELECT * FROM posts;");
     res.send(posts);
-    console.log("posts from server", posts);
+   // console.log("posts from server", posts);
   } catch (e) {
     return res.status(400).json({ e });
   }
