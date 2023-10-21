@@ -1,7 +1,8 @@
 import cors from 'cors';
 import express from 'express';
 import 'dotenv/config';
-import db from '..server/db-connection.js';
+import db from './db-connection.js';
+import bodyParser from 'body-parser';
 
 const app = express();
 app.use(cors());
@@ -18,7 +19,7 @@ app.get("/posts", async (req, res) => {
     try {
         const {rows: posts} = await db.query("SELECT * FROM posts;");
         res.send(posts);
-        console.log("posts from server, posts")
+        console.log("posts from server", posts)
 
     } catch (e) {
         return res.status(400).json({e})
