@@ -20,24 +20,26 @@ const reducer = (state, action) => {
   }
 };
 
-const submitHandler = async (e) => {
-  e.preventDefault();
-  try {
-    const body = state;
-    const response = await fetch("http://localhost:3030/posts", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(body)
-    }
-    );
-  }
-  catch (e){
-    console.log(e);
-  }
-}
+
 
 const AddPostForm = () => {
   const [state, dispatch] = useReducer(reducer, initialAddForm);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const body = state;
+      const response = await fetch("http://localhost:3030/posts", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(body)
+      }
+      );
+    }
+    catch (e){
+      console.log(e);
+    }
+  }
 
   return (
     <form onSubmit={submitHandler}>
